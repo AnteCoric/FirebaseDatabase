@@ -24,8 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //writeNewUser("Ante","Coric","2EA1",123456789,141592);
-        //writeNewUser("Pepijn","Janssen","2EA1",987654321,784512);
+        /*writeNewUser("Mandel","Brabban","2EA3",258927069,376350);
+        writeNewUser("Caldwell","Renshell","2EA1",330927838,121229);
+        writeNewUser("Ruperto","Wenderott","2EA2",788927617,601354);
+        writeNewUser("Talya","Peres","2EA3",613303834,900132);
+        writeNewUser("Cristin","Ollin","2EA4",656700197,379644);
+        writeNewUser("Cynthia","Aldie","2EA1",139978296,161841);*/
         // Read from the database
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -53,30 +57,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-@IgnoreExtraProperties
-class Student {
 
-    public String FirstName;
-    public String LastName;
-    public String Klas;
-    public int StudentNr;
-    public int SerialNr;
-
-    public Student() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
-    }
-
-    public Student(String firstname, String lastname, String klas, int studentnr, int serialnr) {
-        this.FirstName = firstname;
-        this.LastName = lastname;
-        this.Klas = klas;
-        this.StudentNr = studentnr;
-        this.SerialNr = serialnr;
-    }
-
-    @Override
-    public String toString() {
-        return this.FirstName + " " + this.LastName + " " + this.Klas + " " + this.StudentNr + " " + this.SerialNr;
-    }
-}
 
